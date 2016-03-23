@@ -1,25 +1,45 @@
 package com.bignerdranch.android.criminalintent;
 
+import java.util.Date;
 import java.util.UUID;
 
 public class Crime {
 
     private UUID mId;
-    private String mTiltle;
+    private String mTitle;
+    private Date mDate;
+    private boolean mSolved;
 
     public Crime() {
         mId = UUID.randomUUID();
+        mDate = new Date();
     }
 
     public UUID getId() {
         return mId;
     }
 
-    public String getTiltle() {
-        return mTiltle;
+    public String getTitle() {
+        return mTitle;
     }
 
-    public void setTiltle(String tiltle) {
-        mTiltle = tiltle;
+    public void setTitle(String tiltle) {
+        mTitle = tiltle;
+    }
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date mDate) {
+        this.mDate = mDate;
+    }
+
+    public boolean isSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean mSolved) {
+        this.mSolved = mSolved;
     }
 }
