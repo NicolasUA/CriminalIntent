@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DatePicker
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog_date_date_picker"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_date"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:calendarViewShown="false">
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
-</DatePicker>
+    <TextView
+        android:id="@+id/dialog_date_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        tools:text="Date of crime:"/>
+
+    <DatePicker
+        android:id="@+id/dialog_date_date_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"/>
+
+    <Button
+        android:id="@+id/dialog_date_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="4dp"
+        tools:text="Ok"/>
+
+</LinearLayout>
