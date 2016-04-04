@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,10 +81,15 @@ public class CrimeFragment extends Fragment {
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                DatePickerFragment datePicker = DatePickerFragment.newInstance(mCrime.getDate());
-                datePicker.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
-                datePicker.show(fm, DIALOG_DATE);
+                if (getResources().getBoolean(R.bool.isTablet)) {
+                    FragmentManager fm = getFragmentManager();
+                    DatePickerFragment datePicker = DatePickerFragment.newInstance(mCrime.getDate());
+                    datePicker.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
+                    datePicker.show(fm, DIALOG_DATE);
+                } else {
+                    Intent intent = DateActivity.newIntent(getActivity(), mCrime.getDate());
+                    startActivityForResult(intent, REQUEST_DATE);
+                }
             }
         });
 
