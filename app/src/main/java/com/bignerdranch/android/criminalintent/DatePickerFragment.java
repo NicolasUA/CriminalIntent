@@ -27,7 +27,6 @@ public class DatePickerFragment extends DialogFragment {
     private DatePicker mDatePicker;
     private Button mOkButton;
     private Calendar mCalendar;
-    private Dialog mDialog;
 
     public static DatePickerFragment newInstance(Date date) {
         Bundle args = new Bundle();
@@ -43,11 +42,9 @@ public class DatePickerFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View view = initView();
 
-        mDialog = new AlertDialog.Builder(getActivity())
+        return new AlertDialog.Builder(getActivity())
                 .setView(view)
                 .create();
-
-        return mDialog;
     }
 
     @NonNull
@@ -76,8 +73,8 @@ public class DatePickerFragment extends DialogFragment {
                 mCalendar.set(Calendar.MONTH, mDatePicker.getMonth());
                 mCalendar.set(Calendar.DAY_OF_MONTH, mDatePicker.getDayOfMonth());
                 sendResult(Activity.RESULT_OK, mCalendar.getTime());
-                if (mDialog != null) {
-                    mDialog.dismiss();
+                if (getDialog() != null) {
+                    getDialog().dismiss();
                 } else {
                     getActivity().finish();
                 }
