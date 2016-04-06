@@ -5,7 +5,8 @@
     android:id="@+id/dialog_date"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:weightSum="10">
 
     <TextView
         android:id="@+id/dialog_date_title_text_view"
@@ -17,8 +18,9 @@
     <DatePicker
         android:id="@+id/dialog_date_date_picker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:calendarViewShown="false"/>
+        android:layout_height="0dp"
+        android:calendarViewShown="false"
+        android:layout_weight="10"/>
 
     <Button
         android:id="@+id/dialog_date_ok_button"
