@@ -9,5 +9,15 @@
     <string name="time_picker_title">Время преступления:</string>
     <string name="hide_subtitle">Скрыть кол-во</string>
     <string name="show_subtitle">Показать кол-во</string>
-    <string name="subtitle_format">Преступлений %1$s</string>
+    <string name="crime_delete_confirmation">Уверены что надо удалить эту запись?</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_crime">Удалить</string>
+    <string name="new_crime">Новое</string>
+    <plurals name="subtitle_plurals">
+        <item quantity="one">%1$s преступление</item>
+        <item quantity="few">%1$s преступления</item>
+        <item quantity="many">%1$s преступлений</item>
+    </plurals>
+    <string name="add_crime">Добавить преступление</string>
+    <string name="empty_list">Список преступлений пуст</string>
 </resources>
