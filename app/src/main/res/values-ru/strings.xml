@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Преступные намерения</string>
+    <string name="app_name">Преступный умысел</string>
     <string name="crime_title_hint">Введите название преступления</string>
     <string name="crime_title_label">Название</string>
     <string name="crime_details_label">Детали</string>
-    <string name="crime_solved_label">Решено</string>
+    <string name="crime_solved_label">Раскрыто</string>
     <string name="date_picker_title">Дата преступления:</string>
     <string name="time_picker_title">Время преступления:</string>
     <string name="hide_subtitle">Скрыть кол-во</string>
@@ -13,11 +13,22 @@
     <string name="delete">Удалить</string>
     <string name="delete_crime">Удалить</string>
     <string name="new_crime">Новое</string>
+    <string name="add_crime">Добавить преступление</string>
+    <string name="empty_list">Список преступлений пуст</string>
+    <string name="crime_report">%1$s!
+Преступление совершено в %2$s. %3$s, %4$s
+</string>
+    <string name="crime_report_no_suspect">нет подозреваемого.</string>
+    <string name="crime_report_solved">Дело раскрыто</string>
+    <string name="crime_report_subject">Отчет о преступлении</string>
+    <string name="crime_report_suspect">подозреваемый %s.</string>
+    <string name="crime_report_text">Отправить отчет</string>
+    <string name="crime_report_unsolved">Дело не раскрыто</string>
+    <string name="crime_suspect_text">Подозреваемый</string>
+    <string name="send_report">Отпраить отчет</string>
     <plurals name="subtitle_plurals">
         <item quantity="one">%1$s преступление</item>
         <item quantity="few">%1$s преступления</item>
         <item quantity="many">%1$s преступлений</item>
     </plurals>
-    <string name="add_crime">Добавить преступление</string>
-    <string name="empty_list">Список преступлений пуст</string>
 </resources>

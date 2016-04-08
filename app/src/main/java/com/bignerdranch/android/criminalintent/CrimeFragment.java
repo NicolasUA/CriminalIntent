@@ -39,6 +39,8 @@ public class CrimeFragment extends Fragment {
     private Button mDateButton;
     private Button mTimeButton;
     private CheckBox mSolvedCheckBox;
+    private Button mSuspectButton;
+    private Button mSendReportButton;
 
     public static CrimeFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -124,6 +126,18 @@ public class CrimeFragment extends Fragment {
                 mCrime.setSolved(isChecked);
             }
         });
+
+        mSendReportButton = (Button) view.findViewById(R.id.crime_report);
+        mSendReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, getCrimeReport());
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.crime_report_subject));
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -189,6 +203,27 @@ public class CrimeFragment extends Fragment {
 
     private void updateTime() {
         mTimeButton.setText(DateFormat.format("HH:mm", mCrime.getDate()));
+    }
+
+    private String getCrimeReport() {
+        String solvedString;
+        if (mCrime.isSolved()) {
+            solvedString = getString(R.string.crime_report_solved);
+        } else {
+            solvedString = getString(R.string.crime_report_unsolved);
+        }
+
+        String dateString = DateFormat.format("EEE, MMM dd", mCrime.getDate()).toString();
+
+        String suspect = mCrime.getSuspect();
+        if (suspect == null) {
+            suspect = getString(R.string.crime_report_no_suspect);
+        } else {
+            suspect = getString(R.string.crime_report_suspect, suspect);
+        }
+
+        return getString(R.string.crime_report,
+                mCrime.getTitle(), dateString, solvedString, suspect);
     }
 
     public void returnResult() {
