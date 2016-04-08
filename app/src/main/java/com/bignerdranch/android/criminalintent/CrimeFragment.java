@@ -1,7 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -126,6 +125,13 @@ public class CrimeFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        CrimeLab.getCrimeLab(getActivity()).updateCrime(mCrime);
     }
 
     @Override
