@@ -25,6 +25,8 @@ The crime was discovered on %2$s. %3$s, and %4$s
     <string name="crime_report_suspect">the suspect is %s.</string>
     <string name="crime_report_subject">CriminalIntent Crime Report</string>
     <string name="send_report">Send crime report via</string>
+    <string name="crime_call_suspect">Call suspect</string>
+    <string name="delete_suspect">Delete suspect</string>
     <plurals name="subtitle_plurals">
         <item quantity="one">%1$s crime</item>
         <item quantity="other">%1$s crimes</item>

@@ -31,4 +31,6 @@
         <item quantity="few">%1$s преступления</item>
         <item quantity="many">%1$s преступлений</item>
     </plurals>
+    <string name="crime_call_suspect">Звонок подозреваемому</string>
+    <string name="delete_suspect">Удалить подозреваемого</string>
 </resources>
